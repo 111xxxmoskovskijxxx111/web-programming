@@ -1,0 +1,2 @@
+Node.js version: v24.14.0
+npm version: 11.9.0
