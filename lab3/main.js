@@ -1,5 +1,5 @@
 // ================= 1 =================
-// invokeAfterDelay
+
 
 function invokeAfterDelay(fn, delay) {
     return new Promise((resolve) => {
@@ -9,7 +9,7 @@ function invokeAfterDelay(fn, delay) {
     });
 }
 
-// Демонстрація (випадкове число 0–10)
+
 invokeAfterDelay(() => Math.floor(Math.random() * 11), 1000)
     .then(result => {
         console.log("1:", result);
@@ -17,7 +17,7 @@ invokeAfterDelay(() => Math.floor(Math.random() * 11), 1000)
 
 
 // ================= 2 =================
-// produceRandomAfterDelay
+
 
 function produceRandomAfterDelay(delay) {
     return invokeAfterDelay(() => Math.floor(Math.random() * 11), delay);
@@ -32,7 +32,7 @@ Promise.all([
 
 
 // ================= 3 =================
-// sleep
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -47,7 +47,7 @@ testSleep();
 
 
 // ================= 4 =================
-// getUser
+
 
 const users = [
     { id: 0, name: "Dima", age: 20, city: "Kyiv" },
@@ -71,7 +71,7 @@ function getUser(id) {
 
 
 // ================= 5 =================
-// loadUsers
+
 
 function loadUsers(ids) {
     return Promise.all(
@@ -90,7 +90,7 @@ loadUsers([0, 1, 5]).then(result => {
 
 
 // ================= 6 =================
-// logCall
+
 
 function logCall(callback) {
     return new Promise((resolve) => {
@@ -103,7 +103,7 @@ function logCall(callback) {
     });
 }
 
-// 4 послідовних виклики
+
 logCall(() => console.log("Call 1"))
     .then(() => logCall(() => console.log("Call 2")))
     .then(() => logCall(() => console.log("Call 3")))
@@ -111,7 +111,7 @@ logCall(() => console.log("Call 1"))
 
 
 // ================= 7 =================
-// showUsers
+
 
 async function showUsers(ids) {
     console.log("7: loading");
@@ -127,3 +127,4 @@ async function showUsers(ids) {
 }
 
 showUsers([0, 2, 10]);
+
